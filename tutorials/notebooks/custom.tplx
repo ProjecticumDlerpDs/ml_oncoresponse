@@ -1,0 +1,14 @@
+((*- extends 'article.tplx' -*))
+
+% Verwijder titel, auteur, datum
+((* block maketitle *))
+((* endblock maketitle *))
+
+% Geen sectienummering
+((* block header *))
+((* endblock header *))
+
+% Tekst mooi doorlopend
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\sloppy
