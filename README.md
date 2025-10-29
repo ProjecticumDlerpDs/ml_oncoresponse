@@ -39,14 +39,16 @@ Kan een model op basis van mutatie en/of methylatieprofielen van tumorcellijnen 
 
 ## Benodigdheden
 
-Voor dit project wordt gebruikgemaakt van Python en JupyterLab. De machine learning pipeline wordt uitgevoerd met behulp van veelgebruikte data science libraries.
+#### Vereisten
 
-#### Software
+Voordat je begint, zorg dat de volgende software geinstalleerd is op je systeem:
 
 - **Python** (versie 3.9 of hoger)
 - **Anaconda Navigator** (voor het beheren van omgevingen en het starten van JupyterLab)
 - **JupyterLab** (voor het uitvoeren van de notebooks)
 - **Git** (voor versiebeheer en het clonen van de repository)
+   
+Alternatief voor Anaconda Navigator: je kunt ook Miniconda gebruiken (zie [https://www.anaconda.com/docs/getting-started/miniconda/main](https://www.anaconda.com/docs/getting-started/miniconda/main))
 
 #### Python-packages
 
@@ -55,47 +57,46 @@ De volgende Python-packages worden gebruikt in dit project:
   - pandas (data verwerking)
   - numpy (numerieke berekeningen)
   - scikit-learn (machine learning en evaluatie)
-  - matplotlib (visualisaties)
-  - seaborn (visualisaties)
+  - matplotlib, seaborn (visualisaties)
   - xgboost (gradient boosting modellen)
  
+---
 
-#### Conda-omgeving instellen
+## Reproduceerbare omgeving
 
 Voor dit project wordt gebruikgemaakt van een conda-environment genaamd **ml_oncoresponse**. Deze bevat de benodigde Python-packages.
 
-Stappen:
+#### Stappen:
 
-1. Zorg dat Anaconda (met Navigator) is geïnstalleerd. In dit project is gewerkt met Anaconda Navigator om JupyterLab en omgevingen te beheren.
-   
-Alternatief: je kunt ook Miniconda gebruiken (zie [https://www.anaconda.com/docs/getting-started/miniconda/main](https://www.anaconda.com/docs/getting-started/miniconda/main))
-
-2. Clone dit project:
+1. Clone dit project:
    
 ```bash
 git clone https://github.com/ProjecticumDlerpDs/ml_oncoresponse.git
 cd ml_oncoresponse
 ```
 
-3. Maak de conda-omgeving aan:
+2. Maak de conda-omgeving aan:
    
 ```bash
 conda create -n ml_oncoresponse python=3.10 
 conda activate ml_oncoresponse
 ```
 
-4. Installeer de benodigde libraries:
+3. Installeer de benodigde libraries:
    
 ``` bash
 conda install pandas numpy scikit-learn matplotlib seaborn
 conda install -c conda-forge xgboost
 ```
 
-5. Kernel toevoegen aan JupyterLab
+4. Voeg de kernel toe aan JupyterLab:
    
 ```
 python -m ipykernel install --user --name=ml_oncoresponse --display-name "Python (ml_oncoresponse)"
 ```
+
+5. Open JupyterLab en kies in elk notebook de kernel Python (ml_oncoresponse) om te zorgen dat de juiste environment wordt gebruikt.
+
 
 ---
 
@@ -105,6 +106,25 @@ Het project is opgedeeld in twee hoofdmappen, elk met eigen data, scripts en out
 
 ```
 ml_oncoresponse/
+├── README.md
+├── converting_format.ipynb
+├── converting_format.pdf
+├── data
+│   ├── processed
+│   └── raw
+├── docs
+│   ├── git_integratie.ipynb
+│   └── git_integratie.md
+├── git_integratie.md
+├── notebooks
+│   └── deelvraag1_dataprep.ipynb
+├── output
+│   ├── figures
+│   └── tables
+└── tutorials
+    ├── data
+    ├── notebooks
+    └── output
 
 ```
 
@@ -146,15 +166,15 @@ Voor dit project wordt gebruik gemaakt van data afkomstig uit de **Cancer Cell L
 
 - De verwerkte data die daadwerkelijk in de notebooks wordt gebruikt, is gefilterd op gemeenschapelijke cellijnen, en cellijn-specifieke features zijn gecombineerd: mutatie + methylatie.
 
-- Tarhet (y) is de AUC voor een specifiek medicijn (één model per medicijn).
+- Target (y) is de AUC voor een specifiek medicijn (één model per medicijn).
 
-- Longkanker analyses zijn gefilterd op `lineage_1 = "Lung"`
+- Longkanker analyses zijn gefilterd op `lineage_1 = "Lung"`  # dit moet nog worden aangepast, hier ben ik nog mee bezig
 
 - De verwerkte data is beschikbaar in de map:
 
-  `xxx`
+  `xxx` # deze is nog niet af
 
-- De notebooks refereren automatisch naar deze map, zodat analyses repdroduceerbaar zijn zonder de volledige raw datasets te hoeven downloaden.
+- De notebooks refereren automatisch naar deze map, zodat analyses repdroduceerbaar zijn zonder de volledige raw datasets te hoeven downloaden. # dit moet ik nog aanpassen
 
 ---
 
