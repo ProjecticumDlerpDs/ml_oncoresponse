@@ -5,12 +5,12 @@ Datum: 2025-12-25
 
 Bevat functies voor:
 - Inlezen van MSigDB GMT-bestanden
-- X
+- ...
 """
 
 def read_gmt(filepath):
     """Lees een GMT-bestand van MSigDB in en zet om in een dictionary.
-    filepath : str
+    Filepath : str
         Pad naar het GMT-bestand
     Returns: dict
         Dictionary met key = pathway naam, value = lijst van genen (HUGO-symbolen)
