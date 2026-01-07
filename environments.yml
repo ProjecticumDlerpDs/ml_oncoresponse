@@ -1,6 +1,7 @@
 name: ml_oncoresponse
 channels:
   - conda-forge
+  - defaults
 dependencies:
   - python=3.13
   - numpy
@@ -12,3 +13,4 @@ dependencies:
   - jupyterlab
   - ipykernel
   - pip
+  - pandoc
